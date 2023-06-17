@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  CountriesInfo
+
+  Created by Alexander Dovlatov on 6/17/23.
+  
+*/
+
+"root-title" = "Countries";
+"root-loading" = "Loading";
+"root-selectFlowButton" = "Select Flow";
+"root-selectFlowMessage" = "Please Select the Flow to continue";
+"root-error" = "Error";
+"root-back" = "Back";
+"root-authorButton" = "Author";
+
+"countriesList-reload" = "Reload";
+"countriesList-close" = "Close";
+"countriesList-loading" = "Loading...";
+"countriesList-selectCountry" = "Please select a country";
+
+"countryDetails-name" = "Name";
+"countryDetails-capital" = "Capital";
+"countryDetails-region" = "Region";
+"countryDetails-code" = "Code";
+"countryDetails-currency" = "Currency";
+"countryDetails-language" = "Language";
+"countryDetails-info" = "Information";
