@@ -33,3 +33,6 @@ Also, the `Author` button will let you learn more about the author.
 ## Dependencies
 The app uses `SVGKit` so please make sure to resolve SPM dependencies
 (File -> Packages -> Reset Package Caches) often reselves possible issues
+
+## Mocking
+Also, the app support mock data (please switch the schema to `CountriesInfo_mock`)
