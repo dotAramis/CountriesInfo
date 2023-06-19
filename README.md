@@ -29,3 +29,7 @@ The `SwiftUI` piece uses the power of Combine.
 The root view is the initial view of the app. Built on `Swift UI`.
 Has options to navigate to the `Swift UI` portion and `UI Kit` portions of the app.
 Also, the `Author` button will let you learn more about the author.
+
+## Dependencies
+The app uses `SVGKit` so please make sure to resolve SPM dependencies
+(File -> Packages -> Reset Package Caches) often reselves possible issues
