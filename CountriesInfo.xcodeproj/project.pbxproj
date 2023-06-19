@@ -278,6 +278,16 @@
 			path = PDF;
 			sourceTree = "<group>";
 		};
+		802CF48A2A4005FF004EB569 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				80A757A72A3D817F003E3DA1 /* CacheService.swift */,
+				80A757C52A3D9B25003E3DA1 /* ImageCacheService.swift */,
+				80A757C32A3D9A23003E3DA1 /* InMemoryImageCacheService.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		806623282A3FA66A002A7C01 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,10 +368,8 @@
 				80A757DE2A3E4111003E3DA1 /* Configuration */,
 				80A757C92A3D9DBF003E3DA1 /* API */,
 				80A757F42A3E77DB003E3DA1 /* Localization */,
-				80A757A72A3D817F003E3DA1 /* CacheService.swift */,
+				802CF48A2A4005FF004EB569 /* Cache */,
 				806622CE2A3F6055002A7C01 /* DataControllerService.swift */,
-				80A757C52A3D9B25003E3DA1 /* ImageCacheService.swift */,
-				80A757C32A3D9A23003E3DA1 /* InMemoryImageCacheService.swift */,
 				80A757CB2A3DA670003E3DA1 /* CountriesDataController.swift */,
 				80A757CD2A3DA7B1003E3DA1 /* DataControllerState.swift */,
 				806622D82A3F8DD6002A7C01 /* NavigationState.swift */,
