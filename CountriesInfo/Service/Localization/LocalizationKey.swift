@@ -33,6 +33,7 @@ enum LocalizationKeys: String, LocalizationKey, CaseIterable {
     case root_selectFlow_message = "root-selectFlowMessage"
     case root_author_button = "root-authorButton"
 
+    case countriesList_notFound = "countriesList-notFound"
     case countriesList_reload = "countriesList-reload"
     case countriesList_close = "countriesList-close"
     case countriesList_loading = "countriesList-loading"
@@ -45,6 +46,7 @@ enum LocalizationKeys: String, LocalizationKey, CaseIterable {
     case countryDetails_currency = "countryDetails-currency"
     case countryDetails_language = "countryDetails-language"
     case countryDetails_info = "countryDetails-info"
+    case countryDetails_flag = "countryDetails-flag"
 }
 
 extension Text {

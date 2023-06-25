@@ -16,6 +16,8 @@ final class CountriesListViewController: UIViewController {
     private let viewModel: CountriesListViewModel = CountriesListViewModel()
     /// The Table View DataSource
     private lazy var dataSource = makeDataSource()
+    /// Debounce timer
+    fileprivate weak var timer: Timer?
     /// The Search Controller used to filter the countries
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -190,8 +192,6 @@ extension CountriesListViewController: UITableViewDelegate {
         let country = viewModel.filteredCountries[indexPath.row]
         let viewModel = CountryDetailViewModel(country: country)
         let detailsViewController = CountryDetailViewController(viewModel: viewModel)
-//        splitViewController?.setViewController(CountryDetailViewController(viewModel: viewModel), for: .secondary)
-//        navigationController?.showDetailViewController(CountryDetailViewController(viewModel: viewModel), sender: self)
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
@@ -203,6 +203,13 @@ extension CountriesListViewController: UISearchResultsUpdating {
             viewModel.searchText = nil
             return
         }
-        viewModel.searchText = searchText
+
+        timer?.invalidate()
+
+        let timer = Timer(timeInterval: 0.5, repeats: false) { [weak self] timer in
+            self?.viewModel.searchText = searchText
+        }
+        self.timer = timer
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
     }
 }

@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import SVGKit
 
 final class CountryDetailViewModel {
     var country: Country
@@ -16,15 +15,6 @@ final class CountryDetailViewModel {
     /// The Action Publisher
     var actionPublisher: ActionPublisher?
 
-    var flagImage: UIImage? {
-        didSet {
-            if let image = flagImage {
-                actionPublisher?(.updateFlag(image))
-            } else {
-                actionPublisher?(.updateFlag(ImageName.logo.uiImage()))
-            }
-        }
-    }
     /// The State
     var flagState: FlagState = .initial {
         didSet { actionPublisher?(.updateFlagState(flagState)) } // Notify the publisher on the flag state change
@@ -47,17 +37,20 @@ final class CountryDetailViewModel {
         view.countryLanguageView.text = "\(LocalizationKeys.countryDetails_currency.localizedValue()): \(country.language.name)"
         view.countryCurrencyView.text = "\(LocalizationKeys.countryDetails_language.localizedValue()): \(country.currency.name)"
 
-        if let image = APP.imageCache.getElement(for: flagId) {
+        if let data = APP.svgImageCache.getElement(for: flagId) {
             flagState = .loaded
-            actionPublisher?(.updateFlag(image))
-        } else {
-            actionPublisher?(.updateFlag(nil))
-            fetchFlag()
+            actionPublisher?(.updateFlagSVGData(data))
+        } else if let url = Bundle.main.url(forResource: "usa.flag", withExtension: "svg"),
+                  let data = try? Data(contentsOf: url) {
+
+            actionPublisher?(.updateFlagSVGData(data))
         }
+        fetchFlag()
     }
 
     /// Runs the flag image fetch request
     func fetchFlag() {
+        guard case FlagState.initial = flagState else { return }
         dataTask?.cancel()
         flagState = .loading
 
@@ -65,27 +58,13 @@ final class CountryDetailViewModel {
         let task = APP.apiService.fetchData(endpoint: ResourceEndpoint.custom(country.flagImageURL)) { [weak self] result in
             switch result {
             case .success(let data):
-                guard let svgImage = SVGKImage(data: data) else {
-                    self?.flagState = .failure(URLError(.badServerResponse))
-                    return
-                }
+                self?.actionPublisher?(.updateFlagSVGData(data))
+                APP.svgImageCache.setElement(data, for: flagId)
 
-                if svgImage.hasSize() {
-                    svgImage.size = CGSize(width: 300, height: 200)
-                }
-
-                let uiImage = svgImage.uiImage
-
-                self?.flagImage = uiImage
                 self?.flagState = .loaded
-                if let uiImage = uiImage {
-                    APP.imageCache.setElement(uiImage, for: flagId)
-                }
             case .failure(let error):
-                self?.flagImage = nil
                 self?.flagState = .failure(error)
             }
-
         }
 
         self.dataTask = task
@@ -105,7 +84,7 @@ extension CountryDetailViewModel {
     enum Action {
         /// Updates the state
         case updateFlagState(FlagState)
-        /// Updates the flag image
-        case updateFlag(UIImage?)
+        /// Updates the flag image (SVG Data)
+        case updateFlagSVGData(Data)
     }
 }

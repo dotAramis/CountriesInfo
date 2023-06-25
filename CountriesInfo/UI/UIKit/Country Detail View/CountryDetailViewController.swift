@@ -35,8 +35,9 @@ final class CountryDetailViewController: UIViewController {
         viewModel.actionPublisher = { [weak self] action in
             DispatchQueue.main.async {
                 switch action {
-                case .updateFlag(let image):
-                    self?.rootView.flagView.image = image
+                case .updateFlagSVGData(let data):
+                    self?.rootView.flagView.load(data, mimeType: "image/svg+xml", characterEncodingName: "utf8", baseURL: Bundle.main.bundleURL)
+                    break
                 case .updateFlagState(let state):
                     switch state {
                     case .loaded: self?.rootView.loadingView.stopAnimating()

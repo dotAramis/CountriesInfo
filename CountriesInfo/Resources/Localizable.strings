@@ -14,6 +14,7 @@
 "root-back" = "Back";
 "root-authorButton" = "Author";
 
+"countriesList-notFound" = "Not found...";
 "countriesList-reload" = "Reload";
 "countriesList-close" = "Close";
 "countriesList-loading" = "Loading...";
@@ -26,3 +27,5 @@
 "countryDetails-currency" = "Currency";
 "countryDetails-language" = "Language";
 "countryDetails-info" = "Information";
+"countryDetails-flag" = "Flag";
+

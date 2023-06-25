@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 final class CountryDetailView: UIView {
     override init(frame: CGRect) {
@@ -56,8 +57,10 @@ final class CountryDetailView: UIView {
         return view
     }()
 
-    let flagView: UIImageView = {
-        let view = UIImageView()
+    let flagView: WKWebView = {
+        let view = WKWebView()
+        view.isOpaque = false
+        view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
         view.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh,

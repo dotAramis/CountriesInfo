@@ -15,12 +15,15 @@
 		802CF4862A3FDDFA004EB569 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CF4842A3FDDFA004EB569 /* Constants.swift */; };
 		802CF4882A3FE5B2004EB569 /* usa.flag.svg in Resources */ = {isa = PBXBuildFile; fileRef = 802CF4872A3FE5B2004EB569 /* usa.flag.svg */; };
 		802CF4892A3FE5B2004EB569 /* usa.flag.svg in Resources */ = {isa = PBXBuildFile; fileRef = 802CF4872A3FE5B2004EB569 /* usa.flag.svg */; };
+		80416ABD2A47E90D00275766 /* SUISVGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80416ABC2A47E90D00275766 /* SUISVGView.swift */; };
+		80416ABF2A47F33400275766 /* SVGImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80416ABE2A47F33400275766 /* SVGImageCacheService.swift */; };
+		80416AC12A47F49C00275766 /* UIImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80416AC02A47F49C00275766 /* UIImageCacheService.swift */; };
+		80416AC32A480D2B00275766 /* SUICountriesListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80416AC22A480D2B00275766 /* SUICountriesListContentView.swift */; };
+		80416AC42A480D2B00275766 /* SUICountriesListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80416AC22A480D2B00275766 /* SUICountriesListContentView.swift */; };
 		806622CF2A3F6055002A7C01 /* DataControllerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806622CE2A3F6055002A7C01 /* DataControllerService.swift */; };
 		806622D32A3F6324002A7C01 /* LocalizationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806622D22A3F6324002A7C01 /* LocalizationsTests.swift */; };
 		806622D92A3F8DD6002A7C01 /* NavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806622D82A3F8DD6002A7C01 /* NavigationState.swift */; };
 		806622DB2A3F98A3002A7C01 /* UIKitFlowViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806622DA2A3F98A3002A7C01 /* UIKitFlowViewWrapper.swift */; };
-		806622DE2A3FA076002A7C01 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 806622DD2A3FA076002A7C01 /* SVGKit */; };
-		806622E02A3FA076002A7C01 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 806622DF2A3FA076002A7C01 /* SVGKitSwift */; };
 		806622E92A3FA616002A7C01 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EBC5D52A3ED33C00432730 /* CountryDetailView.swift */; };
 		806622EA2A3FA616002A7C01 /* RemoteAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757BF2A3D91B5003E3DA1 /* RemoteAPIService.swift */; };
 		806622EB2A3FA616002A7C01 /* ApplicationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757A22A3D80FE003E3DA1 /* ApplicationContext.swift */; };
@@ -41,7 +44,6 @@
 		806622FA2A3FA616002A7C01 /* CountryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EBC5D32A3ED33600432730 /* CountryDetailViewController.swift */; };
 		806622FB2A3FA616002A7C01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757722A3D7CEE003E3DA1 /* AppDelegate.swift */; };
 		806622FC2A3FA616002A7C01 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EBC5D02A3EC52700432730 /* UIConstants.swift */; };
-		806622FD2A3FA616002A7C01 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C52A3D9B25003E3DA1 /* ImageCacheService.swift */; };
 		806622FE2A3FA616002A7C01 /* CountryInfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A758032A3E8305003E3DA1 /* CountryInfoCellModel.swift */; };
 		806622FF2A3FA616002A7C01 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757D42A3DAD5D003E3DA1 /* RootView.swift */; };
 		806623002A3FA616002A7C01 /* MockConfigurationServiceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757F02A3E6A32003E3DA1 /* MockConfigurationServiceLoader.swift */; };
@@ -61,7 +63,7 @@
 		8066230E2A3FA616002A7C01 /* ColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757FD2A3E7E02003E3DA1 /* ColorName.swift */; };
 		8066230F2A3FA616002A7C01 /* ConfigurationServiceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757EA2A3E6725003E3DA1 /* ConfigurationServiceLoader.swift */; };
 		806623102A3FA616002A7C01 /* CurrencyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757B12A3D88E2003E3DA1 /* CurrencyDTO.swift */; };
-		806623112A3FA616002A7C01 /* InMemoryImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C32A3D9A23003E3DA1 /* InMemoryImageCacheService.swift */; };
+		806623112A3FA616002A7C01 /* InMemoryCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C32A3D9A23003E3DA1 /* InMemoryCacheService.swift */; };
 		806623122A3FA616002A7C01 /* ResourceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757AA2A3D81ED003E3DA1 /* ResourceEndpoint.swift */; };
 		806623132A3FA616002A7C01 /* CountriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757D72A3E1A03003E3DA1 /* CountriesListViewController.swift */; };
 		806623142A3FA616002A7C01 /* CountriesDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757CB2A3DA670003E3DA1 /* CountriesDataController.swift */; };
@@ -77,8 +79,6 @@
 		806623222A3FA616002A7C01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A7577B2A3D7CF0003E3DA1 /* Assets.xcassets */; };
 		806623292A3FA682002A7C01 /* ApplicationConfiguration_mock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806622D02A3F62B1002A7C01 /* ApplicationConfiguration_mock.plist */; };
 		8066232A2A3FA702002A7C01 /* MockAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806622D42A3F655C002A7C01 /* MockAPIService.swift */; };
-		8066232F2A3FAABD002A7C01 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8066232E2A3FAABD002A7C01 /* SVGKit */; };
-		806623312A3FAABE002A7C01 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 806623302A3FAABE002A7C01 /* SVGKitSwift */; };
 		806623322A3FBD8D002A7C01 /* ApplicationConfiguration_mock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 806622D02A3F62B1002A7C01 /* ApplicationConfiguration_mock.plist */; };
 		806623342A3FC103002A7C01 /* SUICountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806623332A3FC103002A7C01 /* SUICountryDetailViewModel.swift */; };
 		806623362A3FC1DA002A7C01 /* SUICountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806623332A3FC103002A7C01 /* SUICountryDetailViewModel.swift */; };
@@ -102,8 +102,7 @@
 		80A757BE2A3D8C6D003E3DA1 /* APIService+countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757BD2A3D8C6D003E3DA1 /* APIService+countries.swift */; };
 		80A757C02A3D91B5003E3DA1 /* RemoteAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757BF2A3D91B5003E3DA1 /* RemoteAPIService.swift */; };
 		80A757C22A3D926A003E3DA1 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C12A3D926A003E3DA1 /* APIConfiguration.swift */; };
-		80A757C42A3D9A23003E3DA1 /* InMemoryImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C32A3D9A23003E3DA1 /* InMemoryImageCacheService.swift */; };
-		80A757C62A3D9B25003E3DA1 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C52A3D9B25003E3DA1 /* ImageCacheService.swift */; };
+		80A757C42A3D9A23003E3DA1 /* InMemoryCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757C32A3D9A23003E3DA1 /* InMemoryCacheService.swift */; };
 		80A757CC2A3DA670003E3DA1 /* CountriesDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757CB2A3DA670003E3DA1 /* CountriesDataController.swift */; };
 		80A757CE2A3DA7B1003E3DA1 /* DataControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757CD2A3DA7B1003E3DA1 /* DataControllerState.swift */; };
 		80A757D22A3DAABF003E3DA1 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A757D12A3DAABF003E3DA1 /* RootViewModel.swift */; };
@@ -162,6 +161,10 @@
 		802CF4802A3FD8A4004EB569 /* ResumeCA.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ResumeCA.pdf; sourceTree = "<group>"; };
 		802CF4842A3FDDFA004EB569 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		802CF4872A3FE5B2004EB569 /* usa.flag.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = usa.flag.svg; sourceTree = "<group>"; };
+		80416ABC2A47E90D00275766 /* SUISVGView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUISVGView.swift; sourceTree = "<group>"; };
+		80416ABE2A47F33400275766 /* SVGImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGImageCacheService.swift; sourceTree = "<group>"; };
+		80416AC02A47F49C00275766 /* UIImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageCacheService.swift; sourceTree = "<group>"; };
+		80416AC22A480D2B00275766 /* SUICountriesListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUICountriesListContentView.swift; sourceTree = "<group>"; };
 		806622CE2A3F6055002A7C01 /* DataControllerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerService.swift; sourceTree = "<group>"; };
 		806622D02A3F62B1002A7C01 /* ApplicationConfiguration_mock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ApplicationConfiguration_mock.plist; sourceTree = "<group>"; };
 		806622D22A3F6324002A7C01 /* LocalizationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationsTests.swift; sourceTree = "<group>"; };
@@ -194,8 +197,7 @@
 		80A757BD2A3D8C6D003E3DA1 /* APIService+countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+countries.swift"; sourceTree = "<group>"; };
 		80A757BF2A3D91B5003E3DA1 /* RemoteAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAPIService.swift; sourceTree = "<group>"; };
 		80A757C12A3D926A003E3DA1 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
-		80A757C32A3D9A23003E3DA1 /* InMemoryImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryImageCacheService.swift; sourceTree = "<group>"; };
-		80A757C52A3D9B25003E3DA1 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		80A757C32A3D9A23003E3DA1 /* InMemoryCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCacheService.swift; sourceTree = "<group>"; };
 		80A757CB2A3DA670003E3DA1 /* CountriesDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesDataController.swift; sourceTree = "<group>"; };
 		80A757CD2A3DA7B1003E3DA1 /* DataControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataControllerState.swift; sourceTree = "<group>"; };
 		80A757D12A3DAABF003E3DA1 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
@@ -246,8 +248,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806622E02A3FA076002A7C01 /* SVGKitSwift in Frameworks */,
-				806622DE2A3FA076002A7C01 /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +255,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806623312A3FAABE002A7C01 /* SVGKitSwift in Frameworks */,
-				8066232F2A3FAABD002A7C01 /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,10 +280,28 @@
 			isa = PBXGroup;
 			children = (
 				80A757A72A3D817F003E3DA1 /* CacheService.swift */,
-				80A757C52A3D9B25003E3DA1 /* ImageCacheService.swift */,
-				80A757C32A3D9A23003E3DA1 /* InMemoryImageCacheService.swift */,
+				80416AC02A47F49C00275766 /* UIImageCacheService.swift */,
+				80416ABE2A47F33400275766 /* SVGImageCacheService.swift */,
+				80A757C32A3D9A23003E3DA1 /* InMemoryCacheService.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		8035345F2A43854700C83BBB /* SVG */ = {
+			isa = PBXGroup;
+			children = (
+				80416ABC2A47E90D00275766 /* SUISVGView.swift */,
+			);
+			path = SVG;
+			sourceTree = "<group>";
+		};
+		80416AC52A48155600275766 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				80EBC5CE2A3EC0B400432730 /* SUICountryDetailView.swift */,
+				806623332A3FC103002A7C01 /* SUICountryDetailViewModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		806623282A3FA66A002A7C01 /* Mock */ = {
@@ -445,6 +461,7 @@
 		80A757CF2A3DAA9D003E3DA1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8035345F2A43854700C83BBB /* SVG */,
 				802CF47D2A3FD6CB004EB569 /* PDF */,
 				80A757D32A3DAAF7003E3DA1 /* Root */,
 				80EBC5C62A3EB81400432730 /* SwiftUI */,
@@ -546,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				80EBC5C72A3EB81D00432730 /* Countries List */,
+				80416AC52A48155600275766 /* Details */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -554,10 +572,9 @@
 			isa = PBXGroup;
 			children = (
 				80EBC5C82A3EB82E00432730 /* SUICountriesListView.swift */,
+				80416AC22A480D2B00275766 /* SUICountriesListContentView.swift */,
 				80EBC5CA2A3EB83600432730 /* SUICountriesListViewModel.swift */,
 				80EBC5CC2A3EBA5800432730 /* SUICountryCell.swift */,
-				80EBC5CE2A3EC0B400432730 /* SUICountryDetailView.swift */,
-				806623332A3FC103002A7C01 /* SUICountryDetailViewModel.swift */,
 			);
 			path = "Countries List";
 			sourceTree = "<group>";
@@ -610,8 +627,6 @@
 			);
 			name = CountriesInfo;
 			packageProductDependencies = (
-				806622DD2A3FA076002A7C01 /* SVGKit */,
-				806622DF2A3FA076002A7C01 /* SVGKitSwift */,
 			);
 			productName = CountriesInfo;
 			productReference = 80A7576F2A3D7CEE003E3DA1 /* CountriesInfo.app */;
@@ -632,8 +647,6 @@
 			);
 			name = CountriesInfoTests;
 			packageProductDependencies = (
-				8066232E2A3FAABD002A7C01 /* SVGKit */,
-				806623302A3FAABE002A7C01 /* SVGKitSwift */,
 			);
 			productName = CountriesInfoTests;
 			productReference = 80A757852A3D7CF0003E3DA1 /* CountriesInfoTests.xctest */;
@@ -690,7 +703,6 @@
 			);
 			mainGroup = 80A757662A3D7CEE003E3DA1;
 			packageReferences = (
-				806622DC2A3FA076002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 80A757702A3D7CEE003E3DA1 /* Products */;
 			projectDirPath = "";
@@ -776,7 +788,6 @@
 				806622FB2A3FA616002A7C01 /* AppDelegate.swift in Sources */,
 				806622FC2A3FA616002A7C01 /* UIConstants.swift in Sources */,
 				806623362A3FC1DA002A7C01 /* SUICountryDetailViewModel.swift in Sources */,
-				806622FD2A3FA616002A7C01 /* ImageCacheService.swift in Sources */,
 				806622FE2A3FA616002A7C01 /* CountryInfoCellModel.swift in Sources */,
 				806622FF2A3FA616002A7C01 /* RootView.swift in Sources */,
 				806623002A3FA616002A7C01 /* MockConfigurationServiceLoader.swift in Sources */,
@@ -792,12 +803,13 @@
 				8066230A2A3FA616002A7C01 /* UIView+setIsHidden.swift in Sources */,
 				802CF4862A3FDDFA004EB569 /* Constants.swift in Sources */,
 				8066230B2A3FA616002A7C01 /* Language.swift in Sources */,
+				80416AC42A480D2B00275766 /* SUICountriesListContentView.swift in Sources */,
 				8066230C2A3FA616002A7C01 /* LocalizationService.swift in Sources */,
 				8066230D2A3FA616002A7C01 /* MockAPIService.swift in Sources */,
 				8066230E2A3FA616002A7C01 /* ColorName.swift in Sources */,
 				8066230F2A3FA616002A7C01 /* ConfigurationServiceLoader.swift in Sources */,
 				806623102A3FA616002A7C01 /* CurrencyDTO.swift in Sources */,
-				806623112A3FA616002A7C01 /* InMemoryImageCacheService.swift in Sources */,
+				806623112A3FA616002A7C01 /* InMemoryCacheService.swift in Sources */,
 				806623122A3FA616002A7C01 /* ResourceEndpoint.swift in Sources */,
 				802CF4832A3FDA33004EB569 /* SUIPDFView.swift in Sources */,
 				806623132A3FA616002A7C01 /* CountriesListViewController.swift in Sources */,
@@ -816,6 +828,7 @@
 				80EBC5D62A3ED33C00432730 /* CountryDetailView.swift in Sources */,
 				80A757C02A3D91B5003E3DA1 /* RemoteAPIService.swift in Sources */,
 				80A757A32A3D80FE003E3DA1 /* ApplicationContext.swift in Sources */,
+				80416AC32A480D2B00275766 /* SUICountriesListContentView.swift in Sources */,
 				80A757F62A3E77EA003E3DA1 /* LocalizationKey.swift in Sources */,
 				80A757DB2A3E3BB8003E3DA1 /* Aliases.swift in Sources */,
 				80A758022A3E82CC003E3DA1 /* CountryInfoCell.swift in Sources */,
@@ -833,9 +846,9 @@
 				80A757BE2A3D8C6D003E3DA1 /* APIService+countries.swift in Sources */,
 				80EBC5D42A3ED33600432730 /* CountryDetailViewController.swift in Sources */,
 				80A757732A3D7CEE003E3DA1 /* AppDelegate.swift in Sources */,
+				80416AC12A47F49C00275766 /* UIImageCacheService.swift in Sources */,
 				80EBC5D12A3EC52700432730 /* UIConstants.swift in Sources */,
 				806623342A3FC103002A7C01 /* SUICountryDetailViewModel.swift in Sources */,
-				80A757C62A3D9B25003E3DA1 /* ImageCacheService.swift in Sources */,
 				80A758042A3E8305003E3DA1 /* CountryInfoCellModel.swift in Sources */,
 				80A757D52A3DAD5D003E3DA1 /* RootView.swift in Sources */,
 				80A757F12A3E6A32003E3DA1 /* MockConfigurationServiceLoader.swift in Sources */,
@@ -850,19 +863,21 @@
 				806622D92A3F8DD6002A7C01 /* NavigationState.swift in Sources */,
 				802CF4852A3FDDFA004EB569 /* Constants.swift in Sources */,
 				80A757E72A3E619C003E3DA1 /* UIView+setIsHidden.swift in Sources */,
+				80416ABF2A47F33400275766 /* SVGImageCacheService.swift in Sources */,
 				80A757BB2A3D8A81003E3DA1 /* Language.swift in Sources */,
 				80A757F32A3E779B003E3DA1 /* LocalizationService.swift in Sources */,
 				8066232A2A3FA702002A7C01 /* MockAPIService.swift in Sources */,
 				80A757FE2A3E7E02003E3DA1 /* ColorName.swift in Sources */,
 				80A757EB2A3E6725003E3DA1 /* ConfigurationServiceLoader.swift in Sources */,
 				80A757B22A3D88E2003E3DA1 /* CurrencyDTO.swift in Sources */,
-				80A757C42A3D9A23003E3DA1 /* InMemoryImageCacheService.swift in Sources */,
+				80A757C42A3D9A23003E3DA1 /* InMemoryCacheService.swift in Sources */,
 				80A757AB2A3D81ED003E3DA1 /* ResourceEndpoint.swift in Sources */,
 				80A757D82A3E1A03003E3DA1 /* CountriesListViewController.swift in Sources */,
 				80A757CC2A3DA670003E3DA1 /* CountriesDataController.swift in Sources */,
 				80A757EE2A3E68BC003E3DA1 /* ApplicationEnvironment.swift in Sources */,
 				80EBC5CF2A3EC0B400432730 /* SUICountryDetailView.swift in Sources */,
 				80EBC5CB2A3EB83600432730 /* SUICountriesListViewModel.swift in Sources */,
+				80416ABD2A47E90D00275766 /* SUISVGView.swift in Sources */,
 				806622DB2A3F98A3002A7C01 /* UIKitFlowViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1257,14 +1272,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		806622DC2A3FA076002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVGKit/SVGKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		806622E62A3FA616002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SVGKit/SVGKit";
@@ -1276,16 +1283,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		806622DD2A3FA076002A7C01 /* SVGKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 806622DC2A3FA076002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKit;
-		};
-		806622DF2A3FA076002A7C01 /* SVGKitSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 806622DC2A3FA076002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKitSwift;
-		};
 		806622E52A3FA616002A7C01 /* SVGKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 806622E62A3FA616002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */;
@@ -1294,16 +1291,6 @@
 		806622E72A3FA616002A7C01 /* SVGKitSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 806622E62A3FA616002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKitSwift;
-		};
-		8066232E2A3FAABD002A7C01 /* SVGKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 806622DC2A3FA076002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKit;
-		};
-		806623302A3FAABE002A7C01 /* SVGKitSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 806622DC2A3FA076002A7C01 /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKitSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

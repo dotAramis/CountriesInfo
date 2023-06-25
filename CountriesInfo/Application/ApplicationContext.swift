@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 /// The convenience handler for the `ApplicationContext.shared`
 let APP = ApplicationContext.shared
@@ -19,18 +20,21 @@ final class ApplicationContext {
 
     let configurationService: ConfigurationService
     let apiService: APIService
-    let imageCache: any ImageCacheService
+    let imageCache: any UIImageCacheService
+    let svgImageCache: any SVGImageCacheService
     let localizationService: LocalizationService
     let dataControllerService: DataControllerService
     let navigationState: NavigationState
 
     init(configurationService: ConfigurationService,
          apiService: APIService,
-         imageCache: any ImageCacheService,
+         imageCache: any UIImageCacheService,
+         svgImageCache: any SVGImageCacheService,
          countriesDataController: CountriesDataController) {
         self.configurationService = configurationService
         self.apiService = apiService
         self.imageCache = imageCache
+        self.svgImageCache = svgImageCache
         self.dataControllerService = DataControllerService()
         self.localizationService = LocalizationService()
         self.navigationState = NavigationState()
@@ -59,7 +63,8 @@ extension ApplicationContext {
             return ApplicationContext(configurationService: configurationService,
                                       apiService: try self.APIService(for: environment,
                                                                       configurationService: configurationService),
-                                      imageCache: InMemoryImageCacheService(),
+                                      imageCache: InMemoryCacheService<String, UIImage>(),
+                                      svgImageCache: InMemoryCacheService<String, Data>(),
                                       countriesDataController: CountriesDataController())
         } catch {
             // We cannot proceed without a configuration. Falling down in a not very graceful manner.

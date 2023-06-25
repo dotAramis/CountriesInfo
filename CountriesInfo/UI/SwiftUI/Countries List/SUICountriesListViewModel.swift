@@ -42,7 +42,7 @@ final class SUICountriesListViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .sink { [unowned self] completion in
                 switch completion {
-                case .finished: self.state = .loaded
+                case .finished: break
                 case .failure(let error): self.state = .failure(error)
                 }
             } receiveValue: { [unowned self] countries in
@@ -51,6 +51,7 @@ final class SUICountriesListViewModel: ObservableObject {
 
         // Here we do filtering
         Publishers.CombineLatest($countries, $searchText)
+            .debounce(for: 0.5, scheduler: RunLoop.main, options: .none)
             .map { countries, searchText in
                 guard searchText.count > 0 else { return countries }
                 let searchText = searchText.lowercased()
@@ -62,6 +63,7 @@ final class SUICountriesListViewModel: ObservableObject {
             .sink(receiveValue: { countries in
                 withAnimation {
                     self.filteredCountries = countries
+                    self.state = .loaded
                 }
             })
             .store(in: &bag)

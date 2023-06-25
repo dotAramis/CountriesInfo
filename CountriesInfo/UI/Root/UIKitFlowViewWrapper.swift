@@ -11,13 +11,13 @@ import SwiftUI
 /// The wrapper to present the UIKit Flow
 struct UIKitFlowViewWrapper: UIViewControllerRepresentable {
     typealias UIViewControllerType = UINavigationController
-        func makeUIViewController(context: Context) -> UIViewControllerType {
-            let viewController = UINavigationController(rootViewController: CountriesListViewController())
-            viewController.navigationBar.prefersLargeTitles = true
-            return viewController
-        }
+    func makeUIViewController(context: Context) -> UIViewControllerType {
+        let viewController = UINavigationController(rootViewController: CountriesListViewController())
+        viewController.navigationBar.prefersLargeTitles = true
+        return viewController
+    }
 
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
 
-        }
+    }
 }

@@ -14,43 +14,39 @@ struct SUICountriesListView: View {
     @StateObject private var viewModel: SUICountriesListViewModel = SUICountriesListViewModel()
 
     var body: some View {
-        switch viewModel.state {
-        case .initial:
-            Color.clear
-                .onAppear {
-                    viewModel.fetch()
-                }
-        case .loaded:
-            ZStack {
-                NavigationSplitView {
-                    List(viewModel.filteredCountries, selection: $viewModel.selection) { country in
-                        NavigationLink {
-                            SUICountryDetailView(country: country)
-                        } label: {
-                            SUICountryCell(country: country)
+        Group {
+            switch viewModel.state {
+            case .initial:
+                ColorName.commonBackground.suiColor()
+                    .onAppear(perform: viewModel.fetch)
+            case .loaded:
+                ZStack {
+                    NavigationSplitView {
+                        SUICountriesListContentView(viewModel: viewModel)
+                    } detail: {
+                        if let selection = viewModel.selection {
+                            SUICountryDetailView(country: selection)
+                        } else {
+                            Text(LocalizationKeys.countriesList_selectCountry)
                         }
                     }
-                    .background(ColorName.commonBackground.suiColor())
+                }
+            case .failure(let error):
+                Text("Error: \(error.localizedDescription)")
                     .toolbar(content: {
                         Button(LocalizationKeys.countriesList_reload.localizedValue(), action: viewModel.fetch)
-                        Button(LocalizationKeys.countriesList_close.localizedValue()) { viewModel.close() }
                     })
-                    .searchable(text: $viewModel.searchText)
-                } detail: {
-                    if let selection = viewModel.selection {
-                        SUICountryDetailView(country: selection)
-                    } else {
-                        Text(LocalizationKeys.countriesList_selectCountry)
-                    }
-                }
+            case .loading:
+                Text(LocalizationKeys.countriesList_loading)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(ColorName.commonBackground.suiColor())
             }
-        case .failure(let error):
-            Text("Error: \(error.localizedDescription)")
-                .toolbar(content: {
-                    Button(LocalizationKeys.countriesList_reload.localizedValue()) { viewModel.fetch() }
-                })
-        case .loading:
-            Text(LocalizationKeys.countriesList_loading)
         }
+    }
+}
+
+struct SUICountriesListView_Previews: PreviewProvider {
+    static var previews: some View {
+        SUICountriesListView()
     }
 }
