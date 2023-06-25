@@ -26,7 +26,28 @@ struct SUICountryCell: View {
             Spacer()
             Text(country.code)
                 .font(.largeTitle)
+                .monospaced()
                 .foregroundColor(ColorName.commonCaptionText.suiColor())
+        }
+    }
+}
+
+struct SUICountryCell_Previews: PreviewProvider {
+    static var previews: some View {
+        let country = Country(name: "Name", capital: "Capital", code: "CC", flagImageURL: Bundle.main.bundleURL, language: Language(code: "LC", name: "LN"), currency: Currency(code: "CC", name: "CN", symbol: "CS"), region: "Region")
+
+        return Group {
+            SUICountryCell(country: country)
+                .background(ColorName.commonBackground.suiColor())
+                .environment(\.colorScheme, .light)
+                .previewDisplayName("Light Mode")
+                .previewLayout(PreviewLayout.sizeThatFits)
+
+            SUICountryCell(country: country)
+                .background(ColorName.commonBackground.suiColor())
+                .environment(\.colorScheme, .dark)
+                .previewDisplayName("Dark Mode")
+                .previewLayout(PreviewLayout.sizeThatFits)
         }
     }
 }
