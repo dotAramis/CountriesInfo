@@ -20,16 +20,25 @@ struct SUICountriesListView: View {
                 ColorName.commonBackground.suiColor()
                     .onAppear(perform: viewModel.fetch)
             case .loaded:
-                ZStack {
-                    NavigationSplitView {
-                        SUICountriesListContentView(viewModel: viewModel)
-                    } detail: {
-                        if let selection = viewModel.selection {
-                            SUICountryDetailView(country: selection)
-                        } else {
-                            Text(LocalizationKeys.countriesList_selectCountry)
+                NavigationView {
+                    List(viewModel.filteredCountries, selection: $viewModel.selection) { country in
+                        NavigationLink {
+                            SUICountryDetailView(country: country)
+                                .navigationTitle(country.name)
+                        } label: {
+                            SUICountryCell(country: country)
                         }
+                        .listRowBackground(Color.clear)
+                        .navigationBarTitleDisplayMode(.large)
                     }
+                    .scrollContentBackground(Visibility.hidden)
+                    .listStyle(.grouped)
+                    .navigationTitle(LocalizationKeys.countriesList_title.localizedValue())
+                    .toolbar(content: {
+                                Button(LocalizationKeys.countriesList_reload.localizedValue(), action: viewModel.fetch)
+                                Button(LocalizationKeys.countriesList_close.localizedValue(), action: viewModel.close)
+                            })
+                    .searchable(text: $viewModel.searchText)
                 }
             case .failure(let error):
                 Text("Error: \(error.localizedDescription)")

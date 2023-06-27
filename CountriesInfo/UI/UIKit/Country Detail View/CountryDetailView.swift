@@ -7,7 +7,8 @@
 
 import Foundation
 import UIKit
-import WebKit
+import SVGView
+import SwiftUI
 
 final class CountryDetailView: UIView {
     override init(frame: CGRect) {
@@ -57,10 +58,28 @@ final class CountryDetailView: UIView {
         return view
     }()
 
-    let flagView: WKWebView = {
-        let view = WKWebView()
-        view.isOpaque = false
-        view.backgroundColor = .clear
+    var svgData: Data? {
+        didSet {
+            flagController?.view.removeFromSuperview()
+            guard let data = svgData else { return }
+            let controller = UIHostingController(rootView: SVGView(data: data))
+            self.flagController = controller
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
+
+            flagView.addSubview(controller.view)
+            controller.view.backgroundColor = .clear
+            NSLayoutConstraint.activate([
+                controller.view.topAnchor.constraint(equalTo: flagView.topAnchor),
+                controller.view.leadingAnchor.constraint(equalTo: flagView.leadingAnchor),
+                controller.view.trailingAnchor.constraint(equalTo: flagView.trailingAnchor),
+                controller.view.bottomAnchor.constraint(equalTo: flagView.bottomAnchor)
+            ])
+        }
+    }
+    private var flagController: UIHostingController<SVGView>?
+
+    let flagView: UIView = {
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
         view.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh,
@@ -166,7 +185,7 @@ final class CountryDetailView: UIView {
         ])
 
         let maxWidthConstraint = flagView.heightAnchor.constraint(equalTo: widthAnchor)
-        maxWidthConstraint.priority = .defaultLow
+        maxWidthConstraint.priority = .defaultHigh
         NSLayoutConstraint.activate([
             flagView.heightAnchor.constraint(equalTo: flagView.widthAnchor, multiplier: 0.7),
             flagView.widthAnchor.constraint(lessThanOrEqualTo: mainContainerView.widthAnchor, multiplier: 0.7),

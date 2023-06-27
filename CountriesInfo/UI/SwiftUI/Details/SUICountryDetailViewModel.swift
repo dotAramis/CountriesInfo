@@ -36,7 +36,6 @@ final class SUICountryDetailViewModel: ObservableObject {
         APP.apiService
             .fetchDataPublisher(endpoint: .custom(country.flagImageURL))
             .receive(on: RunLoop.main)
-            .print()
             .sink { [unowned self] completion in
                 switch completion {
                 case .finished:

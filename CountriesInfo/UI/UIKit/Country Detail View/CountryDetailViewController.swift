@@ -36,7 +36,7 @@ final class CountryDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 switch action {
                 case .updateFlagSVGData(let data):
-                    self?.rootView.flagView.load(data, mimeType: "image/svg+xml", characterEncodingName: "utf8", baseURL: Bundle.main.bundleURL)
+                    self?.rootView.svgData = data
                     break
                 case .updateFlagState(let state):
                     switch state {

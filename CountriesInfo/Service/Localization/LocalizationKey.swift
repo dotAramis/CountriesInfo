@@ -33,6 +33,7 @@ enum LocalizationKeys: String, LocalizationKey, CaseIterable {
     case root_selectFlow_message = "root-selectFlowMessage"
     case root_author_button = "root-authorButton"
 
+    case countriesList_title = "countriesList-title"
     case countriesList_notFound = "countriesList-notFound"
     case countriesList_reload = "countriesList-reload"
     case countriesList_close = "countriesList-close"

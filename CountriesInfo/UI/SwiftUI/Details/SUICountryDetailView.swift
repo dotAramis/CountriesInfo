@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SVGView
 
 /// The Country Details View
 struct SUICountryDetailView: View {
@@ -23,7 +24,7 @@ struct SUICountryDetailView: View {
             Section {
                 Group {
                     if let imageData = viewModel.flagData ?? viewModel.flagPlaceholderData {
-                        SUISVGView(data: imageData)
+                        SVGView(data: imageData)
                     } else {
                         Image(ImageName.logo)
                             .resizable()
@@ -69,7 +70,6 @@ struct SUICountryDetailView: View {
                 }
             }
         }
-        .navigationBarTitle(viewModel.country.name)
         .background(ColorName.commonBackground.suiColor())
     }
 }

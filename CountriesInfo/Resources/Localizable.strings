@@ -14,6 +14,7 @@
 "root-back" = "Back";
 "root-authorButton" = "Author";
 
+"countriesList-title" = "Countries";
 "countriesList-notFound" = "Not found...";
 "countriesList-reload" = "Reload";
 "countriesList-close" = "Close";
