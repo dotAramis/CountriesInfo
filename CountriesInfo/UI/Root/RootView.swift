@@ -160,10 +160,11 @@ extension RootView {
         Text(LocalizationKeys.root_title)
             .foregroundColor(ColorName.commonCaptionText.suiColor())
             .font(Font.largeTitle)
+            .layoutPriority(1)
 
         Spacer().frame(width: UIConstants.baseHorizontalSpacing, height: UIConstants.baseVerticalSpacing)
 
-        logoView()
+        logoView().layoutPriority(1)
 
         Spacer().frame(width: UIConstants.baseHorizontalSpacing, height: UIConstants.baseVerticalSpacing)
 
@@ -174,6 +175,7 @@ extension RootView {
         .foregroundColor(ColorName.buttonText.suiColor())
         .background(ColorName.buttonBackground.suiColor())
         .cornerRadius(4)
+        .layoutPriority(1)
 
         Button(LocalizationKeys.root_author_button.localizedValue()) {
             viewModel.authorButtonPressed()
@@ -182,6 +184,7 @@ extension RootView {
         .foregroundColor(ColorName.buttonText.suiColor())
         .background(ColorName.buttonBackground.suiColor())
         .cornerRadius(4)
+        .layoutPriority(1)
     }
 }
 

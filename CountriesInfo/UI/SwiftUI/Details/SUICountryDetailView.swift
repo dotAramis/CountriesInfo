@@ -11,33 +11,30 @@ import SVGView
 /// The Country Details View
 struct SUICountryDetailView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    @StateObject private var viewModel: SUICountryDetailViewModel
+    @ObservedObject private var viewModel: SUICountryDetailViewModel
 
     init(country: Country) {
-        self._viewModel = StateObject(wrappedValue: SUICountryDetailViewModel(country: country))
+        self.viewModel = SUICountryDetailViewModel(country: country)
     }
 
     /// Builds the main view
     @ViewBuilder func mainViews() -> some View {
         Spacer().frame(width: UIConstants.baseHorizontalSpacing, height: UIConstants.baseVerticalSpacing)
-        List {
-            Section {
-                Group {
-                    if let imageData = viewModel.flagData ?? viewModel.flagPlaceholderData {
-                        SVGView(data: imageData)
-                    } else {
-                        Image(ImageName.logo)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
-                }
-                .listRowBackground(Color.clear)
-                .frame(height: 300)
-                .onAppear { viewModel.loadFlag() }
-            } header: {
-                Text(LocalizationKeys.countryDetails_flag)
-            }
 
+        Group {
+            if let imageData = viewModel.flagData ?? viewModel.flagPlaceholderData {
+                SVGView(data: imageData)
+            } else {
+                Image(ImageName.logo)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
+        .listRowBackground(Color.clear)
+        .frame(height: 300)
+        .onAppear { viewModel.loadFlag() }
+
+        List {
             Section {
                 Group {
                     Text("\(LocalizationKeys.countryDetails_name.localizedValue()): \(viewModel.country.name)")
